@@ -3,7 +3,7 @@ import spacy
 import time
 
 uri = "bolt://localhost:7687"
-driver = GraphDatabase.driver(uri, auth=("neo4j", "1234"))
+driver = GraphDatabase.driver(uri, auth=("neo4j", "localneo4j"))
 
 listOfAcceptedTags = ['ADJ', 'ADV', 'VERB', 'NOUN', 'PROPN']
 
@@ -32,3 +32,6 @@ def get_raw_messages_analyzed(tx):
 
 with driver.session() as session:
     session.read_transaction(get_raw_messages_analyzed)
+
+
+    # localneo4j
